@@ -1,8 +1,4 @@
-import {
-  HashRouter as Router,
-  Route
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css';
 import Header from './components/Header'
@@ -15,8 +11,10 @@ function App() {
       <div className="container dark">
         <div className="app">
           <Header />
-          <Route path="/" exact component={NotesListPage} />
-          <Route path="/note/:id" component={NotePage} />
+          <Routes>
+            <Route path="/" element={<NotesListPage />} />
+            <Route path="/note/:id" element={<NotePage />} />
+          </Routes>
         </div>
       </div>
     </Router>
